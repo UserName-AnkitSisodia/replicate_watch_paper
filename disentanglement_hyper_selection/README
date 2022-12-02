@@ -1,0 +1,10 @@
+1.  module load miniconda
+2.  conda activate as3465_1
+3.  module load dSQ
+4.  export LD_LIBRARY_PATH=/gpfs/loomis/project/karunakaran/as3465/conda_envs/as3465_1/lib:$LD_LIBRARY_PATH
+5.  cp ../dataset_creation/edited_files/*npz data/watches/
+6.  dsq --job-file <file_name> --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## Run the models
+    Example: dsq --job-file for_python_script_files/classification_models_c1.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00
+7.  Store 'mse_loss_validation' for all hyperparameter configuration from results/<model_name>/train_losses.csv  ## [Ankit] I will create a script
+8.  Take the average of 'mse_loss_validation' across different seed values. ## [Ankit] I will create a script
+9.  Choose the hyperparameter value with the lowest 'mse_loss_validation' ## [Ankit] I will create a script

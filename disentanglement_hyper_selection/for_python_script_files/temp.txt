@@ -1,0 +1,3 @@
+python main.py -s 2 --btcvae-B 30 --btcvae-M 0 --name disentanglement_without_demand -e 5
+python main.py -s 2 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0 --name autoencoder -e 5
+python main.py -s 2 --btcvae-A 1 --btcvae-B 1 --btcvae-G 1 --btcvae-M 0 --name vae -e 5
