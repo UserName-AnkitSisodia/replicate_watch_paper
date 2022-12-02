@@ -1,0 +1,37 @@
+1.  cp -R raw_files edited_files ## Comment: Copy the raw images to a new directory
+2.  cp step0_image_magick.sh edited_files/; cp preprocessed_structured_data.csv edited_files/; cp command.sh edited_files/; ## Comment: Copy image_magick script and structured data
+3.  module load miniconda; module load ImageMagick; ## Load appropriate packages
+4.  cd edited_files/
+5.  chmod 777 step0_image_magick.sh; chmod 777 command.sh ## Comment: Ensure script has proper read-write permissions
+6.  ./step0_image_magick.sh ## Comment: Run the image_magick script
+7.  cd ..; cp -R edited_files/ edited_files_v2 ## Copy the folder as a backup
+8.  cd edited_files; mkdir train_valid/; mkdir test1/; mkdir test2/
+9.  conda activate r_2022 ## Activate R environment
+10. cd ../; cp step1_image_magick_v2_filt.r edited_files/; cd edited_files/
+11. Rscript step1_image_magick_v2_filt.r ## If it does not work, then run the foreach loop step by step 
+12. mkdir new_dir; mv new*jpg new_dir/; rm *jpg; mv new_dir/*jpg .i; rm -rf new_dir/
+13. ./command.sh
+14. cp ../step3_dataset_v2_filt.py .
+15. cp step3_dataset_v2_filt.py train_valid/
+16. cp step3_dataset_v2_filt.py test1/
+17. cp step3_dataset_v2_filt.py test2/    
+18. conda activate for_pyblp ## Activate Python environment
+19. cd train_valid/
+20. python step3_dataset_v2_filt.py
+21. mv christies.npz
+22. cp christies.npz ../  
+23. cd ../test1
+24. python step3_dataset_v2_filt.py
+25. mv christies.npz christies_test1.npz
+26. cp christies_test1.npz ../
+27. cd ../test2
+28. python step3_dataset_v2_filt.py
+29. mv christies.npz christies_test2.npz
+30. cp christies_test2.npz ../
+
+
+
+
+
+
+ 
