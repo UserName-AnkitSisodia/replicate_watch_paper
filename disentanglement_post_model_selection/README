@@ -2,5 +2,5 @@
 2.  conda activate as3465_1
 3.  module load dSQ
 4.  export LD_LIBRARY_PATH=/gpfs/loomis/project/karunakaran/as3465/conda_envs/as3465_1/lib:$LD_LIBRARY_PATH
-5.  cp ../dataset_creation/edited_files/*npz data/watches/
+5.  cp ../dataset_creation/*npz data/watches/
 6.  dsq --job-file temp.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## Run the model corresponding to the best hyperparemeter on the entire training dataset
