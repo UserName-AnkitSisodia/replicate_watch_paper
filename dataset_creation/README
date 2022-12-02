@@ -1,3 +1,9 @@
+For Github, follow the below steps.
+
+1. Click on https://drive.google.com/file/d/1DqJ4ALZs_rMiJulSkelizleUKXCtG_x1/ to download christies.npz
+
+Below steps are to reproduce dataset creation using raw images (not included in Github version)
+
 1.  cp -R raw_files edited_files ## Comment: Copy the raw images to a new directory
 2.  cp step0_image_magick.sh edited_files/; cp preprocessed_structured_data.csv edited_files/; cp command.sh edited_files/; ## Comment: Copy image_magick script and structured data
 3.  module load miniconda; module load ImageMagick; ## Load appropriate packages
