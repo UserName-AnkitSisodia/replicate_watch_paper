@@ -1,0 +1,12 @@
+1.  module load miniconda
+2.  conda activate r_2022
+3.  Rscript generate_visual_conjoint.R
+4.  vim save_text.txt; delete first line; :%s/"//g; :%s/                /        /g; :wq!
+5.  cat viz_1.py >> visualize.py; cat viz_2.py >> visualize.py; cat save_text.txt >> visualize.py; cp utils/visualize.py utils/orig_visualize.py; cp visualize.py utils
+6.  conda activate as3465_1
+7.  module load dSQ
+8.  export LD_LIBRARY_PATH=/gpfs/loomis/project/karunakaran/as3465/conda_envs/as3465_1/lib:$LD_LIBRARY_PATH
+9.  cp ../dataset_creation/edited_files/*npz data/watches/
+10. vim gpu_dsq_train.txt; ## Put the best hyperparameters for b and m in this file   
+11. dsq --job-file gpu_dsq_train.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## Run the model corresponding to the best hyperparemeter on the entire training dataset
+12. cd results; ./rename_script.sh

@@ -1,0 +1,10 @@
+python main.py -s 4 --name full1_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full2_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full3_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full4_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full5_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full6_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full7_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full8_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full9_s4b18m50 --btcvae-B 18 --btcvae-M 50
+python main.py -s 4 --name full0_s4b18m50 --btcvae-B 18 --btcvae-M 50
