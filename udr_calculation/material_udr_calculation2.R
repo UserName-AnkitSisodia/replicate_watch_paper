@@ -56,7 +56,7 @@ udr_beta_inner <- function(beta,seed,m) {
   focal_df$file_name <- NULL
   focal_df <- delete_columns(focal_df)
   udr_inner = 0
-  for(i in 1:10)
+  for(i in 1:5)
   {
     if(i!=seed)
     {
@@ -67,18 +67,18 @@ udr_beta_inner <- function(beta,seed,m) {
       }
   }
   # print(paste("Mean UDR Inner",udr_inner/9))
-  return(udr_inner/9)
+  return(udr_inner/4)
 }
 
 udr_beta_outer <- function(beta,m)
 {
   udr_outer <- 0
-  for(i in 1:10)
+  for(i in 1:5)
   {
     udr_outer <- udr_outer + udr_beta_inner(beta,i,m)
   }
   # print(paste("Mean UDR Outer",udr_outer/10))
-  return((udr_outer)/10)
+  return((udr_outer)/5)
 }
 
 beta <- c(1,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50)
