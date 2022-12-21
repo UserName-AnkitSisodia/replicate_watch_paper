@@ -1,0 +1,20 @@
+1.  module load miniconda
+2.  conda activate as3465_1
+3.  module load dSQ
+4.  export LD_LIBRARY_PATH=/gpfs/loomis/project/karunakaran/as3465/conda_envs/as3465_1/lib:$LD_LIBRARY_PATH
+5.  cp ../dataset_creation/edited_files/*npz data/watches/
+6.  Run the code
+
+    dsq --job-file classification_models_c1_brand.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## similarly c2 to c10
+    dsq --job-file classification_models_c1_circa.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## similarly c2 to c10
+    dsq --job-file classification_models_c1_material.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## similarly c2 to c10
+    dsq --job-file classification_models_c1_movement.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## similarly c2 to c10
+    dsq --job-file classification_models_c1_price.txt --mem=64G --gres=gpu:1 --partition=gpu -t 15:00:00 ## similarly c2 to c10
+
+7.  cd results;
+
+7.  mkdir brand; mv brand_s* brand; cp brand_mv_script.sh brand; cd brand/; ./brand_mv_script.sh; cd .. 
+10. mkdir circa; mv circa_s* circa; cp circa_mv_script.sh circa; cd circa/; ./circa_mv_script.sh; cd ..
+13. mkdir movement; mv movement_s* movement; cp movement_mv_script.sh movement; cd movement/; ./movement_mv_script.sh; cd ..
+16. mkdir material: mv material_s* material; cp material_mv_script.sh material; cd material; ./material_mv_script.sh, cd ..
+19. mkdir price: mv price_s* price; cp price_mv_script.sh price; cd price/; ./price_mv_script.sh; cd .. 
