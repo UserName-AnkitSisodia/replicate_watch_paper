@@ -23,28 +23,28 @@ cp ../disentanglement_hyper_selection/results/price/*/*train_losses.csv price
 cp ../disentanglement_hyper_selection/results/price/*/*mean_params_test1.csv price
 cp ../disentanglement_hyper_selection/results/price/*/*mean_params_test2.csv price
 
-cp udr_calculation1.R brand
-cp udr_calculation1.R circa
-cp udr_calculation1.R material
-cp udr_calculation1.R movement
-cp udr_calculation1.R price
+cp brand_udr_calculation1.R brand
+cp circa_udr_calculation1.R circa
+cp material_udr_calculation1.R material
+cp movement_udr_calculation1.R movement
+cp price_udr_calculation1.R price
 
-cp udr_calculation2.R brand
-cp udr_calculation2.R circa
-cp udr_calculation2.R material
-cp udr_calculation2.R movement
-cp udr_calculation2.R price
+cp brand_udr_calculation2.R brand
+cp circa_udr_calculation2.R circa
+cp material_udr_calculation2.R material
+cp movement_udr_calculation2.R movement
+cp price_udr_calculation2.R price
 
-cp val_loss.R brand
-cp val_loss.R circa
-cp val_loss.R material
-cp val_loss.R movement
-cp val_loss.R price
+cp brand_val_loss.R brand
+cp circa_val_loss.R circa
+cp material_val_loss.R material
+cp movement_val_loss.R movement
+cp price_val_loss.R price
 
 conda activate r_2022
 
-cd brand; Rscript val_loss.R; Rscript udr_calculation1.R; Rscript udr_calculation2.R
-cd circa; Rscript val_loss.R; Rscript udr_calculation1.R; Rscript udr_calculation2.R
-cd material; Rscript val_loss.R; Rscript udr_calculation1.R; Rscript udr_calculation2.R
-cd movement; Rscript val_loss.R; Rscript udr_calculation1.R; Rscript udr_calculation2.R
-cd price; Rscript val_loss.R; Rscript udr_calculation1.R; Rscript udr_calculation2.R
+cd brand; Rscript brand_val_loss.R; Rscript brand_udr_calculation1.R; Rscript brand_udr_calculation2.R; cd ..
+cd circa; Rscript circa_val_loss.R; Rscript circa_udr_calculation1.R; Rscript circa_udr_calculation2.R; cd ..
+cd material; Rscript material_val_loss.R; Rscript material_udr_calculation1.R; Rscript material_udr_calculation2.R; cd ..
+cd movement; Rscript movement_val_loss.R; Rscript movement_udr_calculation1.R; Rscript movement_udr_calculation2.R; cd ..
+cd price; Rscript price_val_loss.R; Rscript price_udr_calculation1.R; Rscript price_udr_calculation2.R; cd ..
